@@ -149,7 +149,7 @@ public:
             {
                 co_gravity_ = node_->get_parameter("gravity").as_double();
                 
-                pub_imu_ = node_->create_publisher<imu_msg>("data_raw", 10);
+                pub_imu_ = node_->create_publisher<imu_msg>("imu/data", 10);
                 pub_temp_ = node_->create_publisher<temp_msg>("temperature", 10);
                 pub_mag_ = node_->create_publisher<mag_msg>("mag", 10);
                 ptr_imu_ = std::make_shared<Wt901c>(co_gravity_);
