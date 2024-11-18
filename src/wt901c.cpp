@@ -45,7 +45,7 @@ void Wt901c::pushBytes(const std::vector<uint8_t>& bytes,
         {
             case 0x51:
             work_imu_.header.stamp = stamp;
-            work_imu_.linear_acceleration.x = - co_acc_ * bytes2int(buf_[3], buf_[2]) - 0.15;
+            work_imu_.linear_acceleration.x = - co_acc_ * bytes2int(buf_[3], buf_[2]);
             if (work_imu_.linear_acceleration.x < 1)
             {
                 work_imu_.linear_acceleration.x = 0; 
